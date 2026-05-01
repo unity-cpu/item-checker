@@ -1,10 +1,20 @@
-{
-  "version": 3,
-  "builds": [
-    { "src": "api/index.js", "use": "@vercel/node" }
+// vercel.js
+export default {
+  version: 2,
+  builds: [
+    {
+      src: "api/index.js",
+      use: "@vercel/node"
+    }
   ],
-  "routes": [
-    { "src": "/cos-check", "dest": "/api/index.js" },
-    { "src": "/(.*)", "dest": "/api/index.js" }
+  routes: [
+    {
+      src: "/cos-check",
+      dest: "api/index.js"
+    },
+    {
+      src: "/(.*)",
+      dest: "api/index.js"
+    }
   ]
-}
+};
